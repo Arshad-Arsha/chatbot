@@ -1,27 +1,27 @@
-import { Node } from "reactflow";
+// src/components/flow-zone/nodes/typings.ts
 
 export enum NodeTypes {
-  Text = "text",
-  Image = "image",
+  Text = "textNode",
+  Image = "imageNode",
 }
 
-export interface TextNodeData {
-  text: string;
-}
-
-export interface ImageNodeData {
-  caption: string;
-  url: string;
-}
-
-export interface TextNode extends Node<TextNodeData, NodeTypes.Text> {
+export interface TextNode {
+  id: string;
   type: NodeTypes.Text;
+  position: { x: number; y: number };
+  data: {
+    text: string;
+  };
 }
 
-export interface ImageNode extends Node<ImageNodeData, NodeTypes.Image> {
+export interface ImageNode {
+  id: string;
   type: NodeTypes.Image;
+  position: { x: number; y: number };
+  data: {
+    url: string;
+    caption: string;
+  };
 }
 
-export type Nodes = TextNode | ImageNode;
-
-export type NodeData = TextNodeData | ImageNodeData;
+export type CustomNode = TextNode | ImageNode;
