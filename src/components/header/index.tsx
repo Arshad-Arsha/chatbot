@@ -80,8 +80,8 @@ const Header = () => {
     >
       <p>ChatBot Demo</p>
       <div style={{ display: "flex", gap: "12px" }}>
-        <Button onClick={handleAddMessageNode}>+ Add Message</Button>
-        <Button onClick={handleAddImageNode}>+ Add Image</Button>
+      <Button loading={false} onClick={handleAddMessageNode}>+ Add Message</Button>
+      <Button loading={false} onClick={handleAddImageNode}>+ Add Image</Button>
         <Button loading={saving} onClick={onSave}>
           {saved ? "Saved" : "Save"}
         </Button>
